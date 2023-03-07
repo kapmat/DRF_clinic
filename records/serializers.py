@@ -1,6 +1,6 @@
 from datetime import datetime
 from rest_framework import serializers
-from models import Records
+from .models import Records
 
 
 def record_time_valid(record_time: datetime) -> bool:

@@ -3,7 +3,7 @@ from django.db import models
 
 class Records(models.Model):
     service = models.ForeignKey(
-        'Services',
+        'root.Services',
         on_delete=models.CASCADE,
         verbose_name='Услуга',
     )

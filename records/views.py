@@ -1,9 +1,9 @@
 from rest_framework import viewsets
-from serialozers import RecordsSerializer
+from .serializers import RecordsSerializer
 from .models import Records
 
 
-class RecordsViewSet(viewsets.ViewSet):
-    queryset = Records.object.all()
+class RecordsViewSet(viewsets.ModelViewSet):
+    queryset = Records.objects.all()
     serializer_class = RecordsSerializer
 

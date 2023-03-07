@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Services, Record
+from .models import Services
 
 admin.site.register(Services)
-admin.site.register(Record)
 # Register your models here.
