@@ -1,16 +1,28 @@
 from rest_framework import viewsets
-from .models import *
-from .serializers import *
+from .models import Services
+from .serializers import ServicesSerializer
 
 
 class ServicesViewSet(viewsets.ModelViewSet):
-   queryset = Services.objects.all()
-   serializer_class = ServicesSerializer
+    queryset = Services.objects.all()
+    serializer_class = ServicesSerializer
 
 
-class RecordViewSet(viewsets.ModelViewSet):
-   queryset = Record.objects.all()
-   serializer_class = RecordSerializer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
