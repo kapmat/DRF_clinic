@@ -29,22 +29,22 @@ class ServicesViewSet(viewsets.ModelViewSet):
 
 
 # class ServicesAPIList(generics.ListCreateAPIView):
-#    queryset = Services.objects.all()
+#    queryset = services.objects.all()
 #    serializer_class = ServicesSerializer
 #
 #
 # class ServicesAPIUpdate(generics.UpdateAPIView):
-#    queryset = Services.objects.all()
+#    queryset = services.objects.all()
 #    serializer_class = ServicesSerializer
 #
 #
 # class ServicesAPIDitailView(generics.RetrieveUpdateDestroyAPIView):
-#    queryset = Services.objects.all()
+#    queryset = services.objects.all()
 #    serializer_class = ServicesSerializer
 
 # class ServicesAPIView(APIView):
 #     def get(self, request):
-#         w = Services.objects.all()
+#         w = services.objects.all()
 #         return Response({'services': ServicesSerializer(w, many=True).data})
 #
 #     def post(self, request):
@@ -59,7 +59,7 @@ class ServicesViewSet(viewsets.ModelViewSet):
 #             return Response({'error': 'Method PUT not allowed'})
 #
 #         try:
-#             instance = Services.objects.get(pk=pk)
+#             instance = services.objects.get(pk=pk)
 #         except:
 #             return Response({'error': 'Object does not exists'})
 #

@@ -3,7 +3,7 @@ from django.db import models
 
 class Records(models.Model):
     service = models.ForeignKey(
-        'root.Services',
+        'services.services',
         on_delete=models.CASCADE,
         verbose_name='Услуга',
     )
@@ -28,3 +28,8 @@ class Records(models.Model):
 
     def __str__(self):
         return "{}, {}".format(self.visitors_name, self.service, self.record_time)
+
+    class Meta:
+        verbose_name = 'Запись'
+        verbose_name_plural = 'Записи'
+

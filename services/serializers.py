@@ -64,7 +64,7 @@ class ServicesSerializer(serializers.ModelSerializer):
 #     price = serializers.DecimalField(max_digits=8, decimal_places=2)
 
     # def create(self, validated_data):
-    #     return Services.objects.create(**validated_data)
+    #     return services.objects.create(**validated_data)
     #
     # def update(self, instance, validated_data):
     #     instance.title = validated_data.get('title', instance.title)

@@ -1,5 +1,5 @@
 """
-ASGI root for config project.
+ASGI services for config project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

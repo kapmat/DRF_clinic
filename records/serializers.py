@@ -1,6 +1,7 @@
 from datetime import datetime
 from rest_framework import serializers
 from .models import Records
+from services.models import Services
 
 
 def record_time_valid(record_time: datetime) -> bool:
@@ -21,6 +22,7 @@ class RecordsSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError('ERROR: Введите правильный номер телефона')
         if not record_time_valid(data['record_time']):
             raise serializers.ValidationError('ERROR: Укажите верное время записи')
+        print(data['service_id'])
         pn = data['visitors_phone']
         data['visitors_phone'] = '+7 ({}) {}-{}-{}'.format(pn[-10:-7], pn[-7:-4], pn[-4:-2], pn[-2:])
         return data

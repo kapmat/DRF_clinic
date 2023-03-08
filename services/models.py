@@ -15,10 +15,14 @@ class Services(models.Model):
         decimal_places=2,
         verbose_name='Стоимость услуги'
     )
-    service_status = models.BooleanField(
+    status = models.BooleanField(
         default=True,
         verbose_name='Услуга доступна',
     )
 
     def __str__(self):
-        return str(self.title)
+        return '{} | {} | {}'.format(str(self.title), str(self.price), 'Доступна' if self.status else 'Недоступна')
+
+    class Meta:
+        verbose_name = 'Услуга'
+        verbose_name_plural = 'Услуги'

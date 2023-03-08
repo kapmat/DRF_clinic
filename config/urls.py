@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from root.views import ServicesViewSet
+from services.views import ServicesViewSet
 from records.views import RecordsViewSet
 from rest_framework import routers
 

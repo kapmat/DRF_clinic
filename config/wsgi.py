@@ -1,5 +1,5 @@
 """
-WSGI root for config project.
+WSGI services for config project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
