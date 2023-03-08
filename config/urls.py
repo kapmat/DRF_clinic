@@ -16,14 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from services.views import ServicesViewSet
-from records.views import RecordsViewSet
+from records.views import *
 from rest_framework import routers
 
 router = routers.SimpleRouter()
 router.register(r'services', ServicesViewSet)
-router.register(r'records', RecordsViewSet)
+# router.register(r'records', RecordsViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include(router.urls)),
+    path('api/v1/records/', RecordsAPIList.as_view()),
+    path('api/v1/records/<int:pk>', RecordsDitailAPIView.as_view()),
 ]
+
