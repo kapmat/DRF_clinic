@@ -1,7 +1,6 @@
 from datetime import datetime
 from rest_framework import serializers
 from .models import Records
-from services.models import Services
 
 
 def record_time_valid(record_time: datetime) -> bool:
@@ -30,4 +29,4 @@ class RecordsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Records
-        fields = "__all__"
+        fields = ['id', 'service', 'create_time', 'record_time', 'visitors_email', 'visitors_phone', 'user_id', 'user']

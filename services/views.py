@@ -1,18 +1,25 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
+from rest_framework.permissions import AllowAny
 from .models import Services
 from .serializers import ServicesSerializer
 
 
-class ServicesViewSet(viewsets.ModelViewSet):
+class AllServicesViewSet(generics.ListCreateAPIView):
     queryset = Services.objects.all()
     serializer_class = ServicesSerializer
 
 
+class ServicesDitailAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Services.objects.all()
+    serializer_class = ServicesSerializer
 
 
+class ServicesPublicAPIList(generics.ListAPIView):
+    serializer_class = ServicesSerializer
+    permission_classes = (AllowAny, )
 
-
-
+    def get_queryset(self):
+        return Services.objects.filter(status=True)
 
 
 
@@ -67,11 +74,5 @@ class ServicesViewSet(viewsets.ModelViewSet):
 #         serializer.is_valid(raise_exception=True)
 #         serializer.save()
 #         return Response({'post': serializer.data})
-
-
-
-
-
-
 
 
